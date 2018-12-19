@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+
+
+<!-- timeout for 15 min modal box-->
+<div class="modal" id="timeOutModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-8 offset-sm-2">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="text-justify">
+                  <p>
+                    <strong>Logoff Due to 15 Minutes Of In-Activity</strong>
+                  </p>
+                  <p id="progressBar" value="0" max="10">Your Session will be expire in {{ ticks }} secounds.</p>
+                  <p>If you want to continue. Please click Restart</p>
+                  <button class="pull-right btn btn-info btn-rounded btn-sm" (click)="reset()" *ngIf="timedOut" type="submit">Restart</button>
+                </div>
+              </div>
+              <div class="col-sm-12 text-center">
+                <button class="btn btn-info btn-rounded btn-sm" (click)="logout()" *ngIf="timedOut" type="submit">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

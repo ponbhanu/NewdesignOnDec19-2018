@@ -1,0 +1,44 @@
+<!-- <div class="container pad50 padding-btm100">
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand text-center" href>INTELLIGENT CONTRACTS-DASHBOARD</a>
+        </div>
+    </div>
+    <toaster-container></toaster-container>
+    <div class="tab">
+        <button id="fileUploadTab" class="tablinks tabsBgColor" (click)="onClickTabs('fileUploadTab')"> RFP upload</button>
+        <button id="clauseIdTab" class="tablinks" tooltip="To update,delete and insert the existing clause id assignment" placement="right"
+            show-delay="100" (click)="onClickTabs('clauseIdTab')">Clause Id
+            <br>Assginment
+            <br>Uploads</button>
+        <button id="feedBackTab" class="tablinks" tooltip="To upload the feedback for any changes in assignments and/or data correction"
+            placement="bottom" show-delay="100" (click)="onClickTabs('feedBackTab')">Feedback Form</button>
+        <button id="analyticsTab" class="tablinks" (click)="onClickTabs('analyticsTab')">Analytics</button>
+
+        <ul class="list-group">
+            <li class="list-group-item">Today - {{currentFileCount}}</li>
+            <li class="list-group-item">Weekly - {{weeklyFileCount}}</li>
+            <li class="list-group-item"> Monthly - {{monthlyFileCount}}</li>
+        </ul>
+    </div>
+
+    <div id="fileUpload" class="tabcontent" [hidden]="!fileUploadTab">
+        <app-upload></app-upload>
+    </div>
+
+    <div id="assignment" class="tabcontent" [hidden]="!clauseIdTab">
+        <app-clauseId></app-clauseId>
+    </div>
+
+    <div id="feedBack" class="tabcontent" [hidden]="!feedBackTab">
+        <app-feedback></app-feedback>
+    </div>
+
+    <div id="analytics" class="tabcontent" [hidden]="!analyticsTab">
+        <app-analytics></app-analytics>
+    </div>
+</div> -->
+
+<div id="fileUpload" [hidden]="!fileUploadTab">
+    <app-upload></app-upload>
+</div>

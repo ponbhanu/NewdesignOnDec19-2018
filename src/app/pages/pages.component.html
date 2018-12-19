@@ -1,0 +1,143 @@
+<toaster-container></toaster-container>
+<div class="materialdesign">
+  <!-- Header top area start-->
+  <div class="wrapper-pro">
+    <div class="left-sidebar-pro">
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <p></p>
+          <p></p>
+        </div>
+        <div class="left-custom-menu-adp-wrap">
+          <ul class="nav navbar-nav left-sidebar-menu-pro">
+            <li class="nav-item">
+              <a id="fileUploadTab" routerLink="/dashboard" (click)="onClickTabs('fileUploadTab')" data-toggle="dropdown" role="button"
+                aria-expanded="false" class="nav-link dropdown-toggle tablinks tabsBgColor">
+                <span>RFP upload</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="clauseIdTab" (click)="onClickTabs('clauseIdTab')" tooltip="To update,delete and insert the existing clause id assignment"
+                placement="right" show-delay="100" routerLink="/clauseId" data-toggle="dropdown" role="button" aria-expanded="false"
+                class="nav-link dropdown-toggle tablinks">
+                <span>Clause Id
+                  <br>Assginment
+                  <br>Uploads</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="feedBackTab" (click)="onClickTabs('feedBackTab')" tooltip="To upload the feedback for any changes in assignments and/or data correction"
+                placement="bottom" show-delay="100" routerLink="/feedback" data-toggle="dropdown" role="button" aria-expanded="false"
+                class="nav-link dropdown-toggle tablinks">
+                <span>Feedback Form</span>
+              </a>
+            </li>
+            <li id="analyticsTab" (click)="onClickTabs('analyticsTab')" routerLink="/analytics" class="nav-item">
+              <a data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle tablinks">
+                <span>Analytics</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="content-inner-all">
+      <div class="header-top-area">
+        <div class="fixed-header-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
+                <div class="header-top-menu tabl-d-n">
+                  <ul class="nav navbar-nav mai-top-nav">
+                    <li class="nav-item">
+                      <a style="padding: 20px 0px 0px 250px;" class="navbar-brand">INTELLIGENT CONTRACTS-DASHBOARD</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                <div class="header-right-info">
+                  <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                    <li class="nav-item">
+                      <a routerLink="/login" role="button" aria-expanded="false" class="nav-link">
+                        <span class="adminpro-icon adminpro-locked author-log-ic"></span>
+                        <span class="admin-name">Log out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- welcome Project, sale area start-->
+      <div class="welcome-adminpro-area">
+        <div class="container-fluid">
+          <div style="background-color: white;" class="row">
+            <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12">
+              <div class="welcome-adminpro-title">
+                <!-- main -->
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+              <div class="income-dashone-total shadow-reset nt-mg-b-30 res-mg-t-30">
+                <div class="income-title">
+                  <div class="main-income-head">
+                    <h2>Today</h2>
+                  </div>
+                </div>
+                <div class="income-dashone-pro">
+                  <div class="income-rate-total">
+                    <div class="price-adminpro-rate">
+                      <h3>
+                        <span>{{currentFileCount}}</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="income-dashone-total shadow-reset nt-mg-b-30 res-mg-t-30">
+                <div class="income-title">
+                  <div class="main-income-head">
+                    <h2>Weekly</h2>
+                  </div>
+                </div>
+                <div class="income-dashone-pro">
+                  <div class="income-rate-total">
+                    <div class="price-adminpro-rate">
+                      <h3>
+                        <span>{{weeklyFileCount}}</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="income-dashone-total shadow-reset nt-mg-b-30 res-mg-t-30">
+                <div class="income-title">
+                  <div class="main-income-head">
+                    <h2>Monthly</h2>
+                  </div>
+                </div>
+                <div class="income-dashone-pro">
+                  <div class="income-rate-total">
+                    <div class="price-adminpro-rate">
+                      <h3>
+                        <span>{{monthlyFileCount}}</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+/* You can add global styles to this file, and also import other style files */
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+    }
+
+    .text-center {
+        text-align: center
+    }
+
+    .bar-grn {
+        width: 1%;
+        height: 20px;
+        background-color: #4CAF50;
+        }
+        .marTop55 {
+            margin-top: 55px;
+        }
+        .marTop25 {
+            margin-top: 25px;
+        }
+        .download-txt {
+            position: absolute;
+            right: 140px;
+            top: 7px;
+        }
+        .custmargin{
+            margin-left: 16px;
+        }

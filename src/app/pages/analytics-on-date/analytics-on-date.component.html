@@ -1,0 +1,27 @@
+<div class="col-sm-10 marTop30">
+  <div class="col-sm-3">
+    <p>Date : {{ analyticsOnDate }}</p>
+  </div>
+  <div class="pull-right">
+    <button type="button" routerLink="/analytics" class="btn btn-success">Back</button>
+  </div>
+</div>
+
+<div class="marTop30 col-sm-12">
+  <p-table [value]="analyticsData">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Sr No</th>
+        <th>Date</th>
+        <th>Count</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ri="rowIndex" let-val>
+      <tr>
+        <td>{{ri + 1 }}</td>
+        <td>{{val.date}}</td>
+        <td>{{val.count}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

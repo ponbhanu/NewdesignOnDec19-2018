@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="tooltip">Hover over me
+            <span class="tooltiptext">Tooltip text</span>
+        </div>
+        <h3>RFP Upload</h3>
+        <input type="file" #myfileInput id="filesUpload" name="img" multiple (change)="onChooseFiles('filesUpload',$event)" [disabled]="disablechoosefile">
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-12">
+        <h3>Upload Status</h3>
+        <p>Files Count: {{files.length}}</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <!-- <th>Select</th> -->
+                    <th width="40%" class="text-center">Name</th>
+                    <th>Size</th>
+                    <th width="20%" class="text-center">Is Primary</th>
+                    <th class="text-center">Actions</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let file of files">
+                    <td>
+                        <strong>{{file.number}}</strong>
+                    </td>
+                    <!-- <td>
+                        <input type="checkbox" value="" (change)="onSelectFilesToUpload($event,file)">
+                    </td> -->
+                    <td>
+                        {{file.name}}
+                    </td>
+                    <td nowrap>{{ file.size/1024/1024 | number:'.2' }} MB</td>
+
+                    <td class="text-center">
+                        <label>
+                            <input type="radio" [(ngModel)]="file.isPrimary" [attr.disabled]="file.disableRadio" id="radio_{{file.id}}" name="is_primary"
+                                (change)="onSelectPrimaryFile(file)" [value]="file">
+                        </label>
+                    </td>
+                    <td nowrap class="text-center">
+                        <button type="button" class="btn btn-danger btn-xs" (click)="onDeleteFile(file.id)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                    <td class="text-center">
+                        <span *ngIf="file.status === 'success' && file.isSelected">
+                            <i class="success-mark  glyphicon glyphicon-ok"></i>
+                        </span>
+                        <span *ngIf="file.status === 'fail'  && file.isSelected">
+                            <i class="fail-mark glyphicon glyphicon-remove"></i>
+                        </span>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="marBot30">
+            <div>
+                Queue progress:
+                <b>{{ fileUploadingStatus}}</b>
+                <div id="myProgress">
+                    <progress-bar [value]="uploaderProgressBarVal" [max]="100"></progress-bar>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-success btn-s customspace" id="uploadAll" (click)="onClickUploadAllFiles()" [disabled]="disableUploadbutton">
+                    <span class="glyphicon glyphicon-upload"></span> Upload all
+                </button>
+                <button type="button" class="btn btn-warning btn-s customspace" (click)="cancel()" [disabled]="disablecancelButton">
+                    <span class="glyphicon glyphicon-ban-circle"></span> Cancel Upload
+                </button>
+                <button type="button" class="btn btn-danger btn-s" (click)="cancel()">
+                    <span class="glyphicon glyphicon-trash"></span> Remove all
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <ocr-tab></ocr-tab>
+</div>

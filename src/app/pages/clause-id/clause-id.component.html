@@ -1,0 +1,51 @@
+<div id="assignment">
+    <div class="col-md-12 marTop30">
+
+        <div class="col-md-12">
+            <div>
+                <p>
+                   Template for ClauseID file upload
+                </p>
+                <a title="Download" download href="../../assets/files/ClauseID.xlsx" target="_self" class="btn btn-info">
+                    <img src="../../assets/files/excel.png" class="img-thumbnail">
+                        <!-- <button type="button" class="btn btn-default btn-sm"> -->
+                            Download
+                        <!-- </button> -->
+                    </a>
+                
+            </div>
+        </div>
+        <br>
+        <div class="col-md-12 marTop30">
+            <p>Upload file</p>
+
+            <input type="file" name="img" (change)="onChooseFiles('clauseId',$event)">
+        </div>
+        <br>
+        <div class="col-md-12 marTop30">
+            <button type="button" class="btn btn-default btn-sm btn-primary btn-md" id="submit-btn" (click)="onSubmitClauseIdForm()">
+                S u b m i t
+            </button>
+        </div>
+         <br>
+         <div class="col-md-12 marTop30">
+            <div class="marBot30 row">
+            <div id="myProgress marTop30">
+                <progress-bar [value]="clauseIdProgressBarVal" [max]="100"></progress-bar>
+            </div>
+         </div>
+         </div>
+
+        <div *ngIf="isClauseFileUploaded" class="col-md-12 marTop30">
+            <div class="alert alert-success">
+                <strong>File uploaded successfully and is on process.</strong>
+            </div>
+        </div>
+
+
+
+        <br>
+
+    </div>
+
+</div>
